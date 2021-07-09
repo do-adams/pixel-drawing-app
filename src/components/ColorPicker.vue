@@ -1,9 +1,9 @@
 <template>
   <div>
-    <Pixel color="white" :current="color === 'white'" />
-    <Pixel color="lightblue" :current="color === 'lightblue'" />
-    <Pixel color="blue" :current="color === 'blue'" />
-    <Pixel color="darkblue" :current="color === 'darkblue'" />
+    <Pixel color="white" :current="color === 'white'" interactive />
+    <Pixel color="lightblue" :current="color === 'lightblue'" interactive />
+    <Pixel color="blue" :current="color === 'blue'" interactive />
+    <Pixel color="darkblue" :current="color === 'darkblue'" interactive />
   </div>
 </template>
 

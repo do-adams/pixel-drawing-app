@@ -10,10 +10,12 @@ export default {
   name: 'Pixel',
   props: {
     color: String,
-    current: Boolean
+    current: Boolean,
+    interactive: Boolean
   },
   methods: {
     changeColor(color) {
+      if (!this.interactive) return;
       this.$root.$emit('updatecolor', color);
     }
   }
