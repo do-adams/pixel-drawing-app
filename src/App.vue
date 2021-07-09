@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <ColorPicker />
+    <ColorPicker :color="color" />
     <Canvas />
   </div>
 </template>
@@ -14,6 +14,14 @@ export default {
   components: {
     Canvas,
     ColorPicker
+  },
+  data() {
+    return {
+      color: 'white'
+    };
+  },
+  mounted() {
+    this.$root.$on('updatecolor', (color) => (this.color = color));
   }
 };
 </script>

@@ -1,12 +1,21 @@
 <template>
-  <div :class="['pixel', color]"></div>
+  <div
+    @click="changeColor(color)"
+    :class="['pixel', color, current ? 'current' : '']"
+  ></div>
 </template>
 
 <script>
 export default {
   name: 'Pixel',
   props: {
-    color: String
+    color: String,
+    current: Boolean
+  },
+  methods: {
+    changeColor(color) {
+      this.$root.$emit('updatecolor', color);
+    }
   }
 };
 </script>
@@ -33,5 +42,9 @@ export default {
 
 .darkblue {
   background-color: rgb(33, 150, 243);
+}
+
+.pixel.current {
+  border: 4px solid yellow;
 }
 </style>
